@@ -1,22 +1,20 @@
-# ♠️ Week08 Bootcamp2019a Project: Matching Card Game
+# Matching Card Game
+This is an attempt at creating game logic to communicate server-side to client-side to create a good user experience. Also, using some javascript fundamentals to create some fun game logic.
 
-### Goal: Make a 10 card memory game - users must be able to select two cards and check if they are a match. If they are a match, they stay flipped. If not, they flip back over. Game is done when all cards are matched and flipped over. Example: http://www.fruit-burst.co.uk/fun-and-games/pairs-game 
+<a href="matching-card.onrender.com">Here is the rendered project</a>
 
-### How to submit your code for review:
+<img src="preview.png" alt="preview of game">
 
-- Fork and clone this repo
-- Create a new branch called answer
-- Checkout answer branch
-- Push to your fork
-- Issue a pull request
-- Your pull request description should contain the following:
-  - (1 to 5 no 3) I completed the challenge
-  - (1 to 5 no 3) I feel good about my code
-  - Anything specific on which you want feedback!
 
-Example:
-```
-I completed the challenge: 5
-I feel good about my code: 4
-I'm not sure if my constructors are setup cleanly...
-```
+## How It's Made:
+_Tech used: HTML, CSS, JavaScript, Node.js_
+
+I used Node to practice building a back-end server and make requests to an API. When the request is made, I simply placed random numbers from 1-10 into an array of 5. When the data came back client-side, I mapped the index of the number to the actual number of the card. This way, each number shows up twice. I also did some client-side scripting to manage the animation and user-interface.
+
+
+## Lessons Learned:
+I learned a lot about setting up both game logic with global scales and creating functions that run on the server. I also learned started scratching the surface of Node and npm by using my first developer package, nodemon, to help streamline the development process.
+
+## More Projects:
+<a href="https://github.com/godwinKamau/node-coin-flip-bootcamp">A coin-flip app made with Node</a>
+<a href="https://github.com/godwinKamau/complex-api">Using APIs to expand my music tastes</a>

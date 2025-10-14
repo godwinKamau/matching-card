@@ -21,6 +21,7 @@ function makeArray() {
                         card.innerHTML = index
                     }
                 })
+                document.querySelector('h2').innerText = 'Match The Cards!'
             })
         
         })
@@ -28,6 +29,7 @@ function makeArray() {
 }
 
 function checkCard(click) {
+    //Cory Rahman(mentor) helped with figuring out the game logic. Namely, using the matched class to set the game
     const gamePiece = click.target.nextElementSibling
     if (gamePiece.innerHTML === '' ) {
         return
@@ -42,7 +44,7 @@ function checkCard(click) {
         if (gamePiece.innerHTML === targets[0]) {
             //place a new class that takes away the transition
             cards.forEach(card => {
-                //could have matched just be nothing and align the logic with conditionals
+                //could have .matched just be nothing and align the logic with conditionals
                 // card.classList.add('matched')
                 if(card.classList.contains('isflipped')){
                     card.classList.add('matched')
@@ -52,7 +54,7 @@ function checkCard(click) {
                 }
             })
         } else {
-            setTimeout(()=> {cards.forEach(card => {
+            setTimeout(() => {cards.forEach(card => {
                 if (card.classList.contains('isflipped') && !card.classList.contains('matched')){
                     card.classList.toggle('isflipped')
                 }

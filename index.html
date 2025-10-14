@@ -5,10 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matching Game</title>
     <meta name="description" content="Practicing with Node by making a card game.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Limelight&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <section class="card-container">
+    <section class="game-container">
+    <section class="instructions">
+        <h2>Press The Start Button</h2>
+    </section>
+    <section class="button-container">
+        <button id="gameStart">Start!</button>
+    </section>
+
+    <section class="card-container">        
         <div class="scene">
             <div class="card">
                 <div class="card__face card__face--front"></div>
@@ -70,8 +81,8 @@
             </div>
         </div>
     </section>
+    </section>
     
-    <button id="gameStart">Start!</button>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

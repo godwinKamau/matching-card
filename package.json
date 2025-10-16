@@ -18,5 +18,8 @@
   "homepage": "https://github.com/godwinKamau/matching-card#readme",
   "devDependencies": {
     "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "pexels": "^1.4.0"
   }
 }

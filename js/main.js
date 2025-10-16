@@ -10,19 +10,24 @@ let targets = []
 // document.querySelectorAll('.card2').addEventListener('click',toggleFlip)
 
 function makeArray() {
-    fetch('/randomize')
+    const searchParam = document.querySelector('#searchParam').value.split(' ').join('+')
+    console.log(searchParam)
+    fetch(`/randomize?search=${searchParam}`)
         .then(res => res.json())
         .then(data => {
-            
-            data.forEach((elem,index) => {
+            console.log(data.photos)
+            console.log(data.randArray)
+            data.randArray.forEach((elem,index) => {
                 console.log(index,elem)
                 cardBacks.forEach((card,index2) =>{
                     if (elem.includes(index2)) {
-                        card.innerHTML = index
+                        card.style.background = `url(${data.photos[index].src.portrait})`
+                        card.style.backgroundSize = 'cover'
+                        card.style.backgroundRepeat = 'no-repeat'
                     }
                 })
                 document.querySelector('h2').innerText = 'Match The Cards!'
-            })
+             })
         
         })
         .catch(err => console.log(err))
@@ -31,17 +36,17 @@ function makeArray() {
 function checkCard(click) {
     //Cory Rahman(mentor) helped with figuring out the game logic. Namely, using the matched class to set the game
     const gamePiece = click.target.nextElementSibling
-    if (gamePiece.innerHTML === '' ) {
+    if (gamePiece.style.background === 'linear-gradient(var(--jet),var(--white))' ) {
         return
     }
     // || click.target.parentNode.classList.contains('matched')
 
     click.target.parentNode.classList.toggle('isflipped')
     if (targets.length < 1) {
-        targets.push(gamePiece.innerHTML)
+        targets.push(gamePiece.style.background)
         console.log(targets)
     } else {
-        if (gamePiece.innerHTML === targets[0]) {
+        if (gamePiece.style.background === targets[0]) {
             //place a new class that takes away the transition
             cards.forEach(card => {
                 //could have .matched just be nothing and align the logic with conditionals
